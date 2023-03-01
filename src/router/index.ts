@@ -5,8 +5,8 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import { component } from 'vue/types/umd';
 import Labels from '@/views/Labels.vue';
 import Statistics from '@/views/Statistics.vue';
+import NotFound from '@/views/NotFound.vue';
 Vue.use(VueRouter)
-
 const routes: Array<RouteConfig> = [
   {
     path: "/",
@@ -24,6 +24,11 @@ const routes: Array<RouteConfig> = [
     path: '/statistics',
     component: Statistics
   },
+  {
+    path: "*",
+    // 全局路径，除了上面四步，如果都不是，进入此路径
+    component: NotFound
+  }
 ]
 
 const router = new VueRouter({
