@@ -10,7 +10,7 @@
 
 <script lang="ts">
     import Vue from 'vue'
-
+import x from "@/assets/icons/label.svg"
     export default Vue.extend({
         
     })

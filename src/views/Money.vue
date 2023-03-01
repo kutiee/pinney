@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import Nav from "@/components/Nav.vue";
+import x from "@assets/icons/money.svg"
 export default {
 name:"Money",
 }
