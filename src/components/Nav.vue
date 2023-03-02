@@ -23,7 +23,9 @@
   </script>
   
   <style lang="scss" scoped>
+   @import "~@/assets/style/helper.scss";
     nav {
+        @extend %outerShadow;
       display: flex;
       box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
       flex-direction: row;
@@ -35,13 +37,15 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        color: #EEB8C3;
+        background:#CE5777;
         .icon {
           width: 32px;
           height: 32px;
         }
       }
       > .item.selected{
-        color: red;
+        color: $color-highlight;
       }
     }
   </style>

@@ -1,11 +1,11 @@
 <template>
-     <div class="nav-wrapper">
-    <div class="content">
-        <slot/><!-- 插槽：重复的封装在这里，用户传进来的内容放个插槽 -->
+    <div class="layout-wrapper" :class="classPrefix && `${classPrefix}-wrapper`">
+      <div class="content" :class="classPrefix && `${classPrefix}-content`   ">
+        <slot/>
+      </div>
+      <Nav/>
     </div>
-    <Nav />
-    </div>
-</template>
+  </template>
 <script lang="ts">
     export default ({
         name:"layout"
@@ -13,8 +13,8 @@
 </script>
 
 <style lang="scss" scoped>
-.nav-wrapper{
-    border:1px solid green;
+.layout-wrapper{
+    // border:1px solid green;
     display:flex;
     flex-direction: column;
     height: 100vh;
