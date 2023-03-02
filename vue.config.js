@@ -1,14 +1,16 @@
-const path = require("path")
+const path = require('path')
 module.exports = {
   lintOnSave: false,
   chainWebpack: config => {
-    const dir = path.resolve(__dirname, "src/assets/icons")
+    const dir = path.resolve(__dirname, 'src/assets/icons') // 需要查找的路径
+    config.module.rule('svg').exclude.add(dir) // 其他 svg loader 排除 icons 目录
     config.module
-      .rule("svg-sprite")
-      .test(value, /\.svg$/)
-    include.add(dir).end()//只包含icons目录
-      .use("svg-sprite-loader").loader(value, "svg-sprite-loader").options(value, { extract: false }).end()
-    config.plugin("svg-sprite").use(require("svg-sprite-loader/plugin"), args, [{ plainSprite: true }])
-    config.module.rule("svg").exclude.add(dir)
+      .rule('svg-sprite')
+      .test(/\.svg$/) // 匹配svg文件
+      .include.add(dir).end() // 包含 上面添加的icons 目录
+      .use('svg-sprite-loader').loader('svg-sprite-loader').options({ extract: false }).end()
+      .use('svgo-loader').loader('svgo-loader')
+      .tap(options => ({ ...options, plugins: [{ removeAttrs: { attrs: 'fill' } }] })).end()
+    config.plugin('svg-sprite').use(require('svg-sprite-loader/plugin'), [{ plainSprite: true }])
   }
 }
