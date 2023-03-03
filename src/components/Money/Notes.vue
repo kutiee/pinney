@@ -11,7 +11,6 @@
   
   <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-import Notes from '@/components/Money/Notes.vue';
 import x from '@/assets/icons/label.svg';
   @Component
     export default class Notes extends Vue{
