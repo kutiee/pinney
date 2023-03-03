@@ -2,21 +2,27 @@
     <div>
       <label class="notes">
         <span class="name">备注</span>
-        <input type="text" placeholder="在这里输入备注">
+        <input type="text" 
+        v-model="value"
+        placeholder="在这里输入备注">
       </label>
     </div>
   </template>
   
   <script lang="ts">
-    export default {
-      name: 'Notes'
+  import { Component, Vue } from 'vue-property-decorator';
+import Notes from '@/components/Money/Notes.vue';
+import x from '@/assets/icons/label.svg';
+  @Component
+    export default class Notes extends Vue{
+      value = '';
     };
   </script>
   
   <style lang="scss" scoped>
     .notes {
       font-size: 14px;
-      background: #f5f5f5;
+      background: #F4F4F4;
       padding-left: 16px;
       display: flex;
       align-items: center;
