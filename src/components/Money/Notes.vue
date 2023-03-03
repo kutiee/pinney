@@ -10,11 +10,17 @@
   </template>
   
   <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-import x from '@/assets/icons/label.svg';
+  
+  import { Component, Watch } from 'vue-property-decorator';
+import Vue from 'vue';
   @Component
     export default class Notes extends Vue{
       value = '';
+
+      @Watch('value')
+      onValueChanged(value:string){
+        this.$emit('update:value',value)
+      }
     };
   </script>
   
