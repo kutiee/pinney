@@ -41,6 +41,8 @@ import TagHelper from '@/mixins/TagHelper';
     background: #EEB8C3;
     font-size: 16px;
     padding-left: 16px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
     > .tag {
       min-height: 44px;
       display: flex;

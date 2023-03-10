@@ -34,7 +34,7 @@
       if (index >= 0) {
         this.selectedTags.splice(index, 1);
       } else {
-        this.selectedTags.push(tag);
+       this.selectedTags.push(tag);
       }
       this.$emit('update:value', this.selectedTags);
     }
@@ -62,6 +62,7 @@
           padding: 0 16px;
           margin-right: 12px;
           margin-top: 4px;
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
           &.selected{
             background: darken($bg,25%);
             color:white;
